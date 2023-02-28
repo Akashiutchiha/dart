@@ -1,12 +1,40 @@
-import 'dart:html';
+class Animal {
+  String name;
+  Animal(this.name);
+  String eat() {
+    return ("$name is eating");
+  }
 
-class Calculator {
-  String? Color;
+  String move() {
+    return ("$name is moving");
+  }
 
-  int add(int a, int b) => a + b;
-  int subtract(int a, int b) => a - b;
-  int multiply(int a, int b) => a * b;
-  int divide(int a, int b) => a ~/ b;
+  String sleep() {
+    return ("$name is sleeping");
+  }
 
-  Calculator({this.Color});
+  String noise() {
+    return ("$name is making noise");
+  }
+}
+
+class Dog extends Animal {
+  Dog(String name) : super('');
+  @override
+  String noise() {
+    return ("$name is barking");
+  }
+
+  @override
+  String eat() {
+    return ("$name is eat's dog food");
+  }
+
+  //Add the "run" to the Dog class inside the move method
+  @override
+//add a super.move() to the move method
+  String move() {
+    super.move();
+    return ("$name is running");
+  }
 }
