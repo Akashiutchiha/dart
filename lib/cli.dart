@@ -1,7 +1,9 @@
+import "dart:async";
+
 class Animal {
   String name;
   Animal(this.name);
-  String eat() {
+  Future<String> eat() async {
     return ("$name is eating");
   }
 
@@ -26,7 +28,9 @@ class Dog extends Animal {
   }
 
   @override
-  String eat() {
+  Future<String> eat() async {
+    await Future.delayed(Duration(seconds: 3));
+    super.eat();
     return ("$name is eat's dog food");
   }
 
